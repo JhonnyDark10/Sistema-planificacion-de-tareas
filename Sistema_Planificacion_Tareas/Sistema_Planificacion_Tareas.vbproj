@@ -1,0 +1,846 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{04A3841A-B300-47E0-9711-D542BAA6E382}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Sub Main</StartupObject>
+    <RootNamespace>Sistema_Planificacion_Tareas</RootNamespace>
+    <AssemblyName>Sistema_Planificacion_Tareas</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Sistema_Planificacion_Tareas.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Sistema_Planificacion_Tareas.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>folders_red_scheduled_tasks_10933.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administración\frm_lista_empleados_p.Designer.vb">
+      <DependentUpon>frm_lista_empleados_p.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Administración\frm_lista_empleados_p.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administración\perfiles.Designer.vb">
+      <DependentUpon>perfiles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Administración\perfiles.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administración\usuarios.Designer.vb">
+      <DependentUpon>usuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Administración\usuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="comision\frm_comisiones.Designer.vb">
+      <DependentUpon>frm_comisiones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="comision\frm_comisiones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="comision\frm_datos_c.Designer.vb">
+      <DependentUpon>frm_datos_c.vb</DependentUpon>
+    </Compile>
+    <Compile Include="comision\frm_datos_c.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="comision\frm_modifica_c.Designer.vb">
+      <DependentUpon>frm_modifica_c.vb</DependentUpon>
+    </Compile>
+    <Compile Include="comision\frm_modifica_c.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contactos\frm_cliente.Designer.vb">
+      <DependentUpon>frm_cliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Contactos\frm_cliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contactos\frm_datos_cliente.Designer.vb">
+      <DependentUpon>frm_datos_cliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Contactos\frm_datos_cliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONECTAR_.vb" />
+    <Compile Include="Contactos\frm_modifica_cliente.Designer.vb">
+      <DependentUpon>frm_modifica_cliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Contactos\frm_modifica_cliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Correo\frm_lista.Designer.vb">
+      <DependentUpon>frm_lista.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Correo\frm_lista.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Departamento\frm_datos_modifica.Designer.vb">
+      <DependentUpon>frm_datos_modifica.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Departamento\frm_datos_modifica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dias Festivos\frm_asigna_modifica.Designer.vb">
+      <DependentUpon>frm_asigna_modifica.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dias Festivos\frm_asigna_modifica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estado Civil\frm_estado_civil.Designer.vb">
+      <DependentUpon>frm_estado_civil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Estado Civil\frm_estado_civil.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eventos\frm_eventos.Designer.vb">
+      <DependentUpon>frm_eventos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\frm_eventos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eventos\frm_evento_indisponibilidad.Designer.vb">
+      <DependentUpon>frm_evento_indisponibilidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\frm_evento_indisponibilidad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eventos\frm_listar_contactos.Designer.vb">
+      <DependentUpon>frm_listar_contactos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\frm_listar_contactos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eventos\frm_listar_participantes.Designer.vb">
+      <DependentUpon>frm_listar_participantes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\frm_listar_participantes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eventos\frm_telefono.Designer.vb">
+      <DependentUpon>frm_telefono.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos\frm_telefono.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Correo\FormEnviarCorreo.Designer.vb">
+      <DependentUpon>FormEnviarCorreo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Correo\FormEnviarCorreo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Indisponibilidad\frm_modifica_indisponibilidad.Designer.vb">
+      <DependentUpon>frm_modifica_indisponibilidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Indisponibilidad\frm_modifica_indisponibilidad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Indisponibilidad\frm_datos.Designer.vb">
+      <DependentUpon>frm_datos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Indisponibilidad\frm_datos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Indisponibilidad\frm_indisponibilidad.Designer.vb">
+      <DependentUpon>frm_indisponibilidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Indisponibilidad\frm_indisponibilidad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal\frm_acceso.Designer.vb">
+      <DependentUpon>frm_acceso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Principal\frm_acceso.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recurso Empleados\frm_empleados.Designer.vb">
+      <DependentUpon>frm_empleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Recurso Empleados\frm_empleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recurso Empleados\frm_modifica_empleado.Designer.vb">
+      <DependentUpon>frm_modifica_empleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Recurso Empleados\frm_modifica_empleado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\clientes.Designer.vb">
+      <DependentUpon>clientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\clientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\indisponibilidades.Designer.vb">
+      <DependentUpon>indisponibilidades.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\indisponibilidades.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\reporte_empleados.Designer.vb">
+      <DependentUpon>reporte_empleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\reporte_empleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\repor_eventos.Designer.vb">
+      <DependentUpon>repor_eventos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\repor_eventos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema_PlanificacionDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sistema_PlanificacionDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema_PlanificacionDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sistema_PlanificacionDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema_PlanificacionDataSet2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sistema_PlanificacionDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema_PlanificacionDataSet3.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sistema_PlanificacionDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema_PlanificacionDataSet4.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sistema_PlanificacionDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema_PlanificacionDataSet5.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sistema_PlanificacionDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema_PlanificacionDataSet6.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sistema_PlanificacionDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="visualizacion\frm_empleados_ind_even.Designer.vb">
+      <DependentUpon>frm_empleados_ind_even.vb</DependentUpon>
+    </Compile>
+    <Compile Include="visualizacion\frm_empleados_ind_even.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recurso Empleados\frm_Lista_Empleados.Designer.vb">
+      <DependentUpon>frm_Lista_Empleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Recurso Empleados\frm_Lista_Empleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recursos Materiales\frm_añadir_modifica.Designer.vb">
+      <DependentUpon>frm_añadir_modifica.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Recursos Materiales\frm_añadir_modifica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tipos Eventos\frm_modifica_eventos.Designer.vb">
+      <DependentUpon>frm_modifica_eventos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tipos Eventos\frm_modifica_eventos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tipo_clientes\frm_tipo_cliente.Designer.vb">
+      <DependentUpon>frm_tipo_cliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tipo_clientes\frm_tipo_cliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Departamento\frm_datos_departamento.Designer.vb">
+      <DependentUpon>frm_datos_departamento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Departamento\frm_datos_departamento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dias Festivos\frm_asigna_dia.Designer.vb">
+      <DependentUpon>frm_asigna_dia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dias Festivos\frm_asigna_dia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Categoria Eventos\frm_categoria_evento.Designer.vb">
+      <DependentUpon>frm_categoria_evento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Categoria Eventos\frm_categoria_evento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Departamento\frm_departamento.Designer.vb">
+      <DependentUpon>frm_departamento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Departamento\frm_departamento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dias Festivos\frm_dia_festivos.Designer.vb">
+      <DependentUpon>frm_dia_festivos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dias Festivos\frm_dia_festivos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recursos Materiales\frm_añadir_materiales.Designer.vb">
+      <DependentUpon>frm_añadir_materiales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Recursos Materiales\frm_añadir_materiales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recursos Materiales\frm_materiales.Designer.vb">
+      <DependentUpon>frm_materiales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Recursos Materiales\frm_materiales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal\frm_principal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal\frm_principal.Designer.vb">
+      <DependentUpon>frm_principal.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tipos Eventos\frm_añadir_eventos.Designer.vb">
+      <DependentUpon>frm_añadir_eventos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tipos Eventos\frm_añadir_eventos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tipos Eventos\frm_tipos_eventos.Designer.vb">
+      <DependentUpon>frm_tipos_eventos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tipos Eventos\frm_tipos_eventos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="visualizacion\frm_contactos_telefonicos.Designer.vb">
+      <DependentUpon>frm_contactos_telefonicos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="visualizacion\frm_contactos_telefonicos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="visualizacion\frm_modifica_evento.Designer.vb">
+      <DependentUpon>frm_modifica_evento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="visualizacion\frm_modifica_evento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="visualizacion\frm_modifica_indisponibilidad.Designer.vb">
+      <DependentUpon>frm_modifica_indisponibilidad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="visualizacion\frm_modifica_indisponibilidad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Administración\frm_lista_empleados_p.resx">
+      <DependentUpon>frm_lista_empleados_p.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administración\perfiles.resx">
+      <DependentUpon>perfiles.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administración\usuarios.resx">
+      <DependentUpon>usuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="comision\frm_comisiones.resx">
+      <DependentUpon>frm_comisiones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="comision\frm_datos_c.resx">
+      <DependentUpon>frm_datos_c.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="comision\frm_modifica_c.resx">
+      <DependentUpon>frm_modifica_c.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contactos\frm_cliente.resx">
+      <DependentUpon>frm_cliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contactos\frm_datos_cliente.resx">
+      <DependentUpon>frm_datos_cliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contactos\frm_modifica_cliente.resx">
+      <DependentUpon>frm_modifica_cliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Correo\frm_lista.resx">
+      <DependentUpon>frm_lista.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Departamento\frm_datos_modifica.resx">
+      <DependentUpon>frm_datos_modifica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dias Festivos\frm_asigna_modifica.resx">
+      <DependentUpon>frm_asigna_modifica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estado Civil\frm_estado_civil.resx">
+      <DependentUpon>frm_estado_civil.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eventos\frm_eventos.resx">
+      <DependentUpon>frm_eventos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eventos\frm_evento_indisponibilidad.resx">
+      <DependentUpon>frm_evento_indisponibilidad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eventos\frm_listar_contactos.resx">
+      <DependentUpon>frm_listar_contactos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eventos\frm_listar_participantes.resx">
+      <DependentUpon>frm_listar_participantes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eventos\frm_telefono.resx">
+      <DependentUpon>frm_telefono.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Correo\FormEnviarCorreo.resx">
+      <DependentUpon>FormEnviarCorreo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Indisponibilidad\frm_modifica_indisponibilidad.resx">
+      <DependentUpon>frm_modifica_indisponibilidad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Indisponibilidad\frm_datos.resx">
+      <DependentUpon>frm_datos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Indisponibilidad\frm_indisponibilidad.resx">
+      <DependentUpon>frm_indisponibilidad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal\frm_acceso.resx">
+      <DependentUpon>frm_acceso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recurso Empleados\frm_empleados.resx">
+      <DependentUpon>frm_empleados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recurso Empleados\frm_modifica_empleado.resx">
+      <DependentUpon>frm_modifica_empleado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\clientes.resx">
+      <DependentUpon>clientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\indisponibilidades.resx">
+      <DependentUpon>indisponibilidades.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Report1.rdlc" />
+    <EmbeddedResource Include="Reportes\Report2.rdlc" />
+    <EmbeddedResource Include="Reportes\Report3.rdlc" />
+    <EmbeddedResource Include="Reportes\Report4.rdlc" />
+    <EmbeddedResource Include="Reportes\reporte_empleados.resx">
+      <DependentUpon>reporte_empleados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\repor_eventos.resx">
+      <DependentUpon>repor_eventos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="visualizacion\frm_empleados_ind_even.resx">
+      <DependentUpon>frm_empleados_ind_even.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recurso Empleados\frm_Lista_Empleados.resx">
+      <DependentUpon>frm_Lista_Empleados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recursos Materiales\frm_añadir_modifica.resx">
+      <DependentUpon>frm_añadir_modifica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tipos Eventos\frm_modifica_eventos.resx">
+      <DependentUpon>frm_modifica_eventos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tipo_clientes\frm_tipo_cliente.resx">
+      <DependentUpon>frm_tipo_cliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Departamento\frm_datos_departamento.resx">
+      <DependentUpon>frm_datos_departamento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dias Festivos\frm_asigna_dia.resx">
+      <DependentUpon>frm_asigna_dia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Categoria Eventos\frm_categoria_evento.resx">
+      <DependentUpon>frm_categoria_evento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Departamento\frm_departamento.resx">
+      <DependentUpon>frm_departamento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dias Festivos\frm_dia_festivos.resx">
+      <DependentUpon>frm_dia_festivos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recursos Materiales\frm_añadir_materiales.resx">
+      <DependentUpon>frm_añadir_materiales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recursos Materiales\frm_materiales.resx">
+      <DependentUpon>frm_materiales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal\frm_principal.resx">
+      <DependentUpon>frm_principal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tipos Eventos\frm_añadir_eventos.resx">
+      <DependentUpon>frm_añadir_eventos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tipos Eventos\frm_tipos_eventos.resx">
+      <DependentUpon>frm_tipos_eventos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="visualizacion\frm_contactos_telefonicos.resx">
+      <DependentUpon>frm_contactos_telefonicos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="visualizacion\frm_modifica_evento.resx">
+      <DependentUpon>frm_modifica_evento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="visualizacion\frm_modifica_indisponibilidad.resx">
+      <DependentUpon>frm_modifica_indisponibilidad.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="Sistema_PlanificacionDataSet.xsc">
+      <DependentUpon>Sistema_PlanificacionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Sistema_PlanificacionDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Sistema_PlanificacionDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Sistema_PlanificacionDataSet.xss">
+      <DependentUpon>Sistema_PlanificacionDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Sistema_PlanificacionDataSet1.xsc">
+      <DependentUpon>Sistema_PlanificacionDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Sistema_PlanificacionDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Sistema_PlanificacionDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Sistema_PlanificacionDataSet1.xss">
+      <DependentUpon>Sistema_PlanificacionDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Sistema_PlanificacionDataSet2.xsc">
+      <DependentUpon>Sistema_PlanificacionDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Sistema_PlanificacionDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Sistema_PlanificacionDataSet2.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Sistema_PlanificacionDataSet2.xss">
+      <DependentUpon>Sistema_PlanificacionDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Sistema_PlanificacionDataSet3.xsc">
+      <DependentUpon>Sistema_PlanificacionDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="Sistema_PlanificacionDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Sistema_PlanificacionDataSet3.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Sistema_PlanificacionDataSet3.xss">
+      <DependentUpon>Sistema_PlanificacionDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="Sistema_PlanificacionDataSet4.xsc">
+      <DependentUpon>Sistema_PlanificacionDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="Sistema_PlanificacionDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Sistema_PlanificacionDataSet4.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Sistema_PlanificacionDataSet4.xss">
+      <DependentUpon>Sistema_PlanificacionDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="Sistema_PlanificacionDataSet5.xsc">
+      <DependentUpon>Sistema_PlanificacionDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="Sistema_PlanificacionDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Sistema_PlanificacionDataSet5.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Sistema_PlanificacionDataSet5.xss">
+      <DependentUpon>Sistema_PlanificacionDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="Sistema_PlanificacionDataSet6.xsc">
+      <DependentUpon>Sistema_PlanificacionDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="Sistema_PlanificacionDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Sistema_PlanificacionDataSet6.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Sistema_PlanificacionDataSet6.xss">
+      <DependentUpon>Sistema_PlanificacionDataSet6.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxCTVLib">
+      <Guid>{CD6C7865-5864-11D0-ABF0-0020AF6B0B7A}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxMBColorPicker">
+      <Guid>{85FD608E-54A8-11D4-8ED4-00E07D815373}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxMSComCtl2">
+      <Guid>{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxXP_Calendar">
+      <Guid>{15FA2920-3398-4A03-A083-228A62723F27}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="CTVLib">
+      <Guid>{CD6C7865-5864-11D0-ABF0-0020AF6B0B7A}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="MBColorPicker">
+      <Guid>{85FD608E-54A8-11D4-8ED4-00E07D815373}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.OutlookViewCtl">
+      <Guid>{0006F062-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="MSComCtl2">
+      <Guid>{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="MSDATASRC">
+      <Guid>{7C0FFAB0-CD84-11D0-949A-00A0C91110ED}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBRUN">
+      <Guid>{EA544A21-C82D-11D1-A3E4-00A0C90AEA82}</Guid>
+      <VersionMajor>6</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>9</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="XP_Calendar">
+      <Guid>{15FA2920-3398-4A03-A083-228A62723F27}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Events_icon-icons.com_74693 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Events_icon-icons.com_74693 %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Events_icon-icons.com_74693.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Events_icon-icons.com_74693 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-user-group-delete-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_3_icon-icons.com_68899.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-user-group-new-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1492531743-icon-sets-school-outline-hand-drawn-iconfinder02_83203.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plane-flight-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Status-user-trash-full-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\findtheuser_search_search_theuser_4518.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_add_256_icon-icons.com_75994.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Actions-list-add-user-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UserAdd_40960.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folders_red_scheduled_tasks_10933 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loupe-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Map-Marker-Push-Pin-1-Right-Pink-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doctor256_24904.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\organizer_calendar_pen_note_6134.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email_blue_23344.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office-Client-Male-Light-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\solicit_accept_check_ok_theaction_6340.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Windows_Close_Program_22531.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_final_anc1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="folders_red_scheduled_tasks_10933.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

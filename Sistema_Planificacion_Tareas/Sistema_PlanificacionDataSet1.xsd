@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Sistema_PlanificacionDataSet1" targetNamespace="http://tempuri.org/Sistema_PlanificacionDataSet1.xsd" xmlns:mstns="http://tempuri.org/Sistema_PlanificacionDataSet1.xsd" xmlns="http://tempuri.org/Sistema_PlanificacionDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="Sistema_PlanificacionConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Sistema_PlanificacionConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Sistema_Planificacion_Tareas.My.MySettings.GlobalReference.Default.Sistema_PlanificacionConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CONTACTOSTableAdapter" GeneratorDataComponentClassName="CONTACTOSTableAdapter" Name="CONTACTOS" UserDataComponentName="CONTACTOSTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Sistema_PlanificacionConnectionString (MySettings)" DbObjectName="Sistema_Planificacion.dbo.CONTACTOS" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT CEDULA, NOMBRE_EMPRESA, NOMBRE_CONTACTO, APELLIDO_PATERNO, DIRECCION, EMAIL, CELULAR FROM dbo.CONTACTOS</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CEDULA" DataSetColumn="CEDULA" />
+              <Mapping SourceColumn="NOMBRE_EMPRESA" DataSetColumn="NOMBRE_EMPRESA" />
+              <Mapping SourceColumn="NOMBRE_CONTACTO" DataSetColumn="NOMBRE_CONTACTO" />
+              <Mapping SourceColumn="APELLIDO_PATERNO" DataSetColumn="APELLIDO_PATERNO" />
+              <Mapping SourceColumn="DIRECCION" DataSetColumn="DIRECCION" />
+              <Mapping SourceColumn="EMAIL" DataSetColumn="EMAIL" />
+              <Mapping SourceColumn="CELULAR" DataSetColumn="CELULAR" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Sistema_PlanificacionDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Sistema_PlanificacionDataSet1" msprop:Generator_UserDSName="Sistema_PlanificacionDataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CONTACTOS" msprop:Generator_TableClassName="CONTACTOSDataTable" msprop:Generator_TableVarName="tableCONTACTOS" msprop:Generator_TablePropName="CONTACTOS" msprop:Generator_RowDeletingName="CONTACTOSRowDeleting" msprop:Generator_RowChangingName="CONTACTOSRowChanging" msprop:Generator_RowEvHandlerName="CONTACTOSRowChangeEventHandler" msprop:Generator_RowDeletedName="CONTACTOSRowDeleted" msprop:Generator_UserTableName="CONTACTOS" msprop:Generator_RowChangedName="CONTACTOSRowChanged" msprop:Generator_RowEvArgName="CONTACTOSRowChangeEvent" msprop:Generator_RowClassName="CONTACTOSRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CEDULA" msprop:Generator_ColumnVarNameInTable="columnCEDULA" msprop:Generator_ColumnPropNameInRow="CEDULA" msprop:Generator_ColumnPropNameInTable="CEDULAColumn" msprop:Generator_UserColumnName="CEDULA">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NOMBRE_EMPRESA" msprop:Generator_ColumnVarNameInTable="columnNOMBRE_EMPRESA" msprop:Generator_ColumnPropNameInRow="NOMBRE_EMPRESA" msprop:Generator_ColumnPropNameInTable="NOMBRE_EMPRESAColumn" msprop:Generator_UserColumnName="NOMBRE_EMPRESA">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NOMBRE_CONTACTO" msprop:Generator_ColumnVarNameInTable="columnNOMBRE_CONTACTO" msprop:Generator_ColumnPropNameInRow="NOMBRE_CONTACTO" msprop:Generator_ColumnPropNameInTable="NOMBRE_CONTACTOColumn" msprop:Generator_UserColumnName="NOMBRE_CONTACTO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="APELLIDO_PATERNO" msprop:Generator_ColumnVarNameInTable="columnAPELLIDO_PATERNO" msprop:Generator_ColumnPropNameInRow="APELLIDO_PATERNO" msprop:Generator_ColumnPropNameInTable="APELLIDO_PATERNOColumn" msprop:Generator_UserColumnName="APELLIDO_PATERNO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DIRECCION" msprop:Generator_ColumnVarNameInTable="columnDIRECCION" msprop:Generator_ColumnPropNameInRow="DIRECCION" msprop:Generator_ColumnPropNameInTable="DIRECCIONColumn" msprop:Generator_UserColumnName="DIRECCION">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EMAIL" msprop:Generator_ColumnVarNameInTable="columnEMAIL" msprop:Generator_ColumnPropNameInRow="EMAIL" msprop:Generator_ColumnPropNameInTable="EMAILColumn" msprop:Generator_UserColumnName="EMAIL">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CELULAR" msprop:Generator_ColumnVarNameInTable="columnCELULAR" msprop:Generator_ColumnPropNameInRow="CELULAR" msprop:Generator_ColumnPropNameInTable="CELULARColumn" msprop:Generator_UserColumnName="CELULAR">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
