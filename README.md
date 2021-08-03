@@ -1,7 +1,7 @@
 ### Hi there 👋
 ### Repositorio Flores Jhonny
 
-Sistema Planificación de Tareas
+Sistema Planificación de Tareas: Consta de registros de Eventos, Materiales, Empleados, Correo, Administración, Acceso, Reportes.
 
 Para su desarrollo se uso:
 
